@@ -1,0 +1,457 @@
+{
+  "dataset": {
+    "workspace": "fruit-onxba",
+    "project": "rotten-fresh-fruitclassification",
+    "version": 2,
+    "external": {
+      "workspace": "objectdetectionlearning-4empo",
+      "project": "food-freshness-classification-zu3j5",
+      "version": 1
+    },
+    "counts": [
+      {
+        "label": "freshapples",
+        "train": 145,
+        "valid": 33,
+        "test": 16,
+        "external": 199
+      },
+      {
+        "label": "freshbananas",
+        "train": 137,
+        "valid": 50,
+        "test": 17,
+        "external": 198
+      },
+      {
+        "label": "freshoranges",
+        "train": 132,
+        "valid": 28,
+        "test": 18,
+        "external": 195
+      },
+      {
+        "label": "rottenapples",
+        "train": 169,
+        "valid": 48,
+        "test": 24,
+        "external": 196
+      },
+      {
+        "label": "rottenbananas",
+        "train": 363,
+        "valid": 82,
+        "test": 62,
+        "external": 200
+      },
+      {
+        "label": "rottenoranges",
+        "train": 139,
+        "valid": 37,
+        "test": 18,
+        "external": 200
+      },
+      {
+        "label": "total",
+        "train": 1085,
+        "valid": 278,
+        "test": 155,
+        "external": 1188
+      }
+    ],
+    "median_image_size": {
+      "test": {
+        "width": 640.0,
+        "height": 640.0
+      },
+      "train": {
+        "width": 640.0,
+        "height": 640.0
+      },
+      "valid": {
+        "width": 640.0,
+        "height": 640.0
+      }
+    },
+    "duplicates_of_train": {
+      "valid": 2,
+      "test": 1,
+      "external": 2
+    },
+    "coco_found_fruit_share": 0.33548387096774196,
+    "median_fruit_size_share": 0.9400090277194977
+  },
+  "classes": [
+    "freshapples",
+    "freshbananas",
+    "freshoranges",
+    "rottenapples",
+    "rottenbananas",
+    "rottenoranges"
+  ],
+  "rotten_classes": [
+    "rottenapples",
+    "rottenbananas",
+    "rottenoranges"
+  ],
+  "majority_class": "rottenbananas",
+  "pred_labels": [
+    "freshapples",
+    "freshbananas",
+    "freshoranges",
+    "rottenapples",
+    "rottenbananas",
+    "rottenoranges",
+    "no fruit found"
+  ],
+  "training": {
+    "model": "yolo11n-cls.pt",
+    "epochs": 20,
+    "imgsz": 224,
+    "batch": 32,
+    "seed": 42
+  },
+  "overall": [
+    {
+      "model": "Fine-tuned yolo11n-cls",
+      "images": 155,
+      "accuracy": 0.9741935483870968,
+      "fruit_type_accuracy": 0.9806451612903225,
+      "rotten_precision": 0.9904761904761905,
+      "rotten_recall": 1.0
+    },
+    {
+      "model": "Baseline: majority class",
+      "images": 155,
+      "accuracy": 0.4,
+      "fruit_type_accuracy": 0.5096774193548387,
+      "rotten_precision": 0.6709677419354839,
+      "rotten_recall": 1.0
+    },
+    {
+      "model": "Baseline: COCO zero-shot",
+      "images": 155,
+      "accuracy": 0.14193548387096774,
+      "fruit_type_accuracy": 0.22580645161290322,
+      "rotten_precision": 0.0,
+      "rotten_recall": 0.0
+    },
+    {
+      "model": "Fine-tuned, external photos",
+      "images": 1188,
+      "accuracy": 0.5622895622895623,
+      "fruit_type_accuracy": 0.7205387205387206,
+      "rotten_precision": 0.8313253012048193,
+      "rotten_recall": 0.5788590604026845
+    }
+  ],
+  "confusion": {
+    "Fine-tuned yolo11n-cls": [
+      [
+        13,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        17,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        17,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        24,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        62,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        18,
+        0
+      ]
+    ],
+    "Baseline: majority class": [
+      [
+        0,
+        0,
+        0,
+        0,
+        16,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        17,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        18,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        24,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        62,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        18,
+        0,
+        0
+      ]
+    ],
+    "Baseline: COCO zero-shot": [
+      [
+        6,
+        0,
+        6,
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        1,
+        7,
+        1,
+        0,
+        0,
+        0,
+        8
+      ],
+      [
+        0,
+        0,
+        9,
+        0,
+        0,
+        0,
+        9
+      ],
+      [
+        8,
+        0,
+        8,
+        0,
+        0,
+        0,
+        8
+      ],
+      [
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        59
+      ],
+      [
+        1,
+        0,
+        2,
+        0,
+        0,
+        0,
+        15
+      ]
+    ],
+    "Fine-tuned, external photos": [
+      [
+        111,
+        40,
+        11,
+        6,
+        25,
+        6,
+        0
+      ],
+      [
+        0,
+        176,
+        0,
+        0,
+        22,
+        0,
+        0
+      ],
+      [
+        2,
+        77,
+        105,
+        1,
+        2,
+        8,
+        0
+      ],
+      [
+        57,
+        30,
+        3,
+        73,
+        31,
+        2,
+        0
+      ],
+      [
+        0,
+        8,
+        0,
+        0,
+        192,
+        0,
+        0
+      ],
+      [
+        16,
+        50,
+        87,
+        16,
+        20,
+        11,
+        0
+      ]
+    ]
+  },
+  "assumptions": {
+    "cost": {
+      "missed_rotten": 2.0,
+      "discarded_good": 0.2,
+      "caught_rotten": 0.0,
+      "passed_good": 0.0
+    },
+    "base_rate": 0.03,
+    "fruit_per_day": 200000,
+    "seconds_per_review": 3,
+    "wage_per_hour": 13.0,
+    "shift_hours": 8,
+    "reviewers_available": 1,
+    "review_cost": 0.010833333333333334,
+    "max_review_share": 0.048
+  },
+  "threshold": 0.58,
+  "band": {
+    "low": 0.52,
+    "high": 0.57
+  },
+  "policies": {
+    "test": [
+      {
+        "policy": "Do nothing (pack everything)",
+        "cost_per_1000": 60.0,
+        "cost_per_day": 12000.0,
+        "reviews_per_day": 0.0,
+        "people_needed": 0.0
+      },
+      {
+        "policy": "A person checks every fruit",
+        "cost_per_1000": 10.833333333333334,
+        "cost_per_day": 2166.6666666666665,
+        "reviews_per_day": 200000.0,
+        "people_needed": 20.833333333333332
+      },
+      {
+        "policy": "Model alone (threshold 0.58)",
+        "cost_per_1000": 3.803921568627451,
+        "cost_per_day": 760.7843137254902,
+        "reviews_per_day": 0.0,
+        "people_needed": 0.0
+      },
+      {
+        "policy": "Model + review (0.52 to 0.57)",
+        "cost_per_1000": 3.803921568627451,
+        "cost_per_day": 760.7843137254902,
+        "reviews_per_day": 0.0,
+        "people_needed": 0.0
+      }
+    ],
+    "external": [
+      {
+        "policy": "Do nothing (pack everything)",
+        "cost_per_1000": 60.0,
+        "cost_per_day": 12000.0,
+        "reviews_per_day": 0.0,
+        "people_needed": 0.0
+      },
+      {
+        "policy": "A person checks every fruit",
+        "cost_per_1000": 10.833333333333334,
+        "cost_per_day": 2166.6666666666665,
+        "reviews_per_day": 200000.0,
+        "people_needed": 20.833333333333332
+      },
+      {
+        "policy": "Model alone (threshold 0.58)",
+        "cost_per_1000": 47.775099764193726,
+        "cost_per_day": 9555.019952838744,
+        "reviews_per_day": 0.0,
+        "people_needed": 0.0
+      },
+      {
+        "policy": "Model + review (0.52 to 0.57)",
+        "cost_per_1000": 47.0168250990084,
+        "cost_per_day": 9403.36501980168,
+        "reviews_per_day": 1779.4531108289498,
+        "people_needed": 0.18535969904468225
+      }
+    ]
+  }
+}
