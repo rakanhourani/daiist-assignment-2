@@ -59,6 +59,10 @@
         "external": 1188
       }
     ],
+    "external_halves": {
+      "tune": 595,
+      "check": 593
+    },
     "median_image_size": {
       "test": {
         "width": 640.0,
@@ -383,74 +387,89 @@
     "seconds_per_review": 3,
     "wage_per_hour": 13.0,
     "shift_hours": 8,
-    "reviewers_available": 1,
-    "review_cost": 0.010833333333333334,
-    "max_review_share": 0.048
+    "review_capacity_per_person": 9600.0
   },
-  "threshold": 0.58,
+  "threshold": 0.89,
   "band": {
-    "low": 0.52,
-    "high": 0.57
+    "low": 0.02,
+    "high": 0.99,
+    "reviewers": 13
   },
   "policies": {
     "test": [
       {
         "policy": "Do nothing (pack everything)",
-        "cost_per_1000": 60.0,
+        "missed_rotten_per_day": 6000.0,
+        "good_discarded_per_day": 0.0,
+        "review_share": 0.0,
+        "people": 0.0,
         "cost_per_day": 12000.0,
-        "reviews_per_day": 0.0,
-        "people_needed": 0.0
+        "cost_per_1000": 60.0
       },
       {
         "policy": "A person checks every fruit",
-        "cost_per_1000": 10.833333333333334,
-        "cost_per_day": 2166.6666666666665,
-        "reviews_per_day": 200000.0,
-        "people_needed": 20.833333333333332
+        "missed_rotten_per_day": 0.0,
+        "good_discarded_per_day": 0.0,
+        "review_share": 1.0,
+        "people": 21.0,
+        "cost_per_day": 2184.0,
+        "cost_per_1000": 10.92
       },
       {
-        "policy": "Model alone (threshold 0.58)",
-        "cost_per_1000": 3.803921568627451,
-        "cost_per_day": 760.7843137254902,
-        "reviews_per_day": 0.0,
-        "people_needed": 0.0
+        "policy": "Model alone (threshold 0.89)",
+        "missed_rotten_per_day": 0.0,
+        "good_discarded_per_day": 3803.921568627459,
+        "review_share": 0.0,
+        "people": 0.0,
+        "cost_per_day": 760.7843137254919,
+        "cost_per_1000": 3.8039215686274592
       },
       {
-        "policy": "Model + review (0.52 to 0.57)",
-        "cost_per_1000": 3.803921568627451,
-        "cost_per_day": 760.7843137254902,
-        "reviews_per_day": 0.0,
-        "people_needed": 0.0
+        "policy": "Model + review (0.02 to 0.99)",
+        "missed_rotten_per_day": 0.0,
+        "good_discarded_per_day": 0.0,
+        "review_share": 0.07665535444947215,
+        "people": 2.0,
+        "cost_per_day": 208.0,
+        "cost_per_1000": 1.04
       }
     ],
-    "external": [
+    "external_check": [
       {
         "policy": "Do nothing (pack everything)",
-        "cost_per_1000": 60.0,
+        "missed_rotten_per_day": 6000.0,
+        "good_discarded_per_day": 0.0,
+        "review_share": 0.0,
+        "people": 0.0,
         "cost_per_day": 12000.0,
-        "reviews_per_day": 0.0,
-        "people_needed": 0.0
+        "cost_per_1000": 60.0
       },
       {
         "policy": "A person checks every fruit",
-        "cost_per_1000": 10.833333333333334,
-        "cost_per_day": 2166.6666666666665,
-        "reviews_per_day": 200000.0,
-        "people_needed": 20.833333333333332
+        "missed_rotten_per_day": 0.0,
+        "good_discarded_per_day": 0.0,
+        "review_share": 1.0,
+        "people": 21.0,
+        "cost_per_day": 2184.0,
+        "cost_per_1000": 10.92
       },
       {
-        "policy": "Model alone (threshold 0.58)",
-        "cost_per_1000": 47.775099764193726,
-        "cost_per_day": 9555.019952838744,
-        "reviews_per_day": 0.0,
-        "people_needed": 0.0
+        "policy": "Model alone (threshold 0.89)",
+        "missed_rotten_per_day": 3422.8187919463085,
+        "good_discarded_per_day": 4603.389830508467,
+        "review_share": 0.0,
+        "people": 0.0,
+        "cost_per_day": 7766.31554999431,
+        "cost_per_1000": 38.831577749971544
       },
       {
-        "policy": "Model + review (0.52 to 0.57)",
-        "cost_per_1000": 47.0168250990084,
-        "cost_per_day": 9403.36501980168,
-        "reviews_per_day": 1779.4531108289498,
-        "people_needed": 0.18535969904468225
+        "policy": "Model + review (0.02 to 0.99)",
+        "missed_rotten_per_day": 60.402684563758385,
+        "good_discarded_per_day": 2630.508474576273,
+        "review_share": 0.6262585598907974,
+        "people": 14.0,
+        "cost_per_day": 2102.9070640427713,
+        "cost_per_1000": 10.514535320213856
       }
     ]
   }
